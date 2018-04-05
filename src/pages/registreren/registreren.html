@@ -1,0 +1,64 @@
+<!--
+  Generated template for the RegistrerenPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registreren</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="master">
+  <ion-list>
+    <ion-item-divider color="light">Naam:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen --><ion-input [(ngModel)]="user.naam" type="text" placeholder="Naam"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Voornaam:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen --><ion-input [(ngModel)]="user.voornaam" type="text" placeholder="Voornaam"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Gebruikersnaam:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-input [(ngModel)]="user.gebruikersnaam" type="text" placeholder="Gebruikersnaam"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">E-mail:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-input [(ngModel)]="user.email" type="email" placeholder="E-mail"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Wachtwoord:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-input [(ngModel)]="user.password" type="password" placeholder="Wachtwoord"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Bevestig Wachtwoord:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-input [(ngModel)]="user.password2" type="password" placeholder="Bevestig Wachtwoord"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Geboortedatum:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-input [(ngModel)]="user.geboortedatum" type="date" placeholder="Geboortedatum"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Geslacht:</ion-item-divider>
+    <ion-item>
+      <ion-label>Geslacht</ion-label>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-select [(ngModel)]="user.geslacht">
+        <ion-option value="V">Vrouw</ion-option>
+        <ion-option value="M">Man</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item-divider color="light">Gewicht:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-input [(ngModel)]="user.gewicht" type="number" placeholder="Gewicht (kg)"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Lengte:</ion-item-divider>
+    <ion-item>
+    <!-- HELP Data moet in database terechtkomen -->  <ion-input [(ngModel)]="user.lengte" type="number" placeholder="Lengte (cm)"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="register()" color="dark">Registreren</button>
+</ion-content>

@@ -3,38 +3,99 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ActiviteitPage } from '../pages/activiteit/activiteit';
+import { ClubfinderPage } from '../pages/clubfinder/clubfinder';
+import { InstellingenPage } from '../pages/instellingen/instellingen';
+import { LoginPage } from '../pages/login/login';
+import { MijnAccountPage } from '../pages/mijn-account/mijn-account';
+import { PlanPage } from '../pages/plan/plan';
+import { PlanDetailsPage } from '../pages/plan-details/plan-details';
+import { RegistrerenPage } from '../pages/registreren/registreren';
+import { VoortgangPage } from '../pages/voortgang/voortgang';
+import { WijzigingenOpgeslagenPage } from '../pages/wijzigingen-opgeslagen/wijzigingen-opgeslagen';
+import { WorkoutPage } from '../pages/workout/workout';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { UserServiceProvider } from '../providers/user-service/user-service';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { AbWorkoutPage } from '../pages/ab-workout/ab-workout';
+import { KrachtPage } from '../pages/kracht/kracht';
+import { KrachttrainingSpieropbouwPage } from '../pages/krachttraining-spieropbouw/krachttraining-spieropbouw';
+
+var config = {
+  apiKey: "AIzaSyCeL1sbyeGe8IuPEnfN3L0ZPjsOphPQ9Gw",
+  authDomain: "fitfind-2ac5c.firebaseapp.com",
+  databaseURL: "https://fitfind-2ac5c.firebaseio.com",
+  projectId: "fitfind-2ac5c",
+  storageBucket: "fitfind-2ac5c.appspot.com",
+  messagingSenderId: "602115158150"
+};
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ActiviteitPage,
+    ClubfinderPage,
+    InstellingenPage,
+    LoginPage,
+    MijnAccountPage,
+    PlanPage,
+    PlanDetailsPage,
+    RegistrerenPage,
+    VoortgangPage,
+    WijzigingenOpgeslagenPage,
+    WorkoutPage,
+    AbWorkoutPage,
+    KrachtPage,
+    KrachttrainingSpieropbouwPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ActiviteitPage,
+    ClubfinderPage,
+    InstellingenPage,
+    LoginPage,
+    MijnAccountPage,
+    PlanPage,
+    PlanDetailsPage,
+    RegistrerenPage,
+    VoortgangPage,
+    WijzigingenOpgeslagenPage,
+    WorkoutPage,
+    AbWorkoutPage,
+    KrachtPage,
+    KrachttrainingSpieropbouwPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    LaunchNavigator,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AuthServiceProvider,
+    UserServiceProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

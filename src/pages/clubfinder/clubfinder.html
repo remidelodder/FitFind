@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ClubfinderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Clubfinder</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="master">
+  <ion-list>
+    <ion-item>
+      <ion-label>Bestemming</ion-label>
+      <ion-select [(ngModel)]="start">
+        <ion-option value="Kapelstraat 151, 8450">Bredene</ion-option>
+        <ion-option value="Maalsesteenweg 50, 8310">Brugge A</ion-option>
+        <ion-option value="Frank Van Ackerpromenade 4, 8000">Brugge B</ion-option>
+        <ion-option value="Patersstraat 5, 8900">Ieper</ion-option>
+        <ion-option value="Duinenwater 28, 8300">Knokke-Heist</ion-option>
+        <ion-option value="Engelsewandeling 2J, 8500">Kortrijk A</ion-option>
+        <ion-option value="Meensestraat 9, 8500">Kortrijk B</ion-option>
+        <ion-option value="Kortrijkstraat 398, 8930">Menen</ion-option>
+        <ion-option value="Northlaan 13, 8400">Oostende A</ion-option>
+        <ion-option value="Torhoutsesteenweg 611, 8400">Oostende B</ion-option>
+        <ion-option value="Brugsesteenweg 363, 8800">Roeselare A</ion-option>
+        <ion-option value="Ooststraat 34, 8800">Roeselare B</ion-option>
+        <ion-option value="Gentseweg 611, 8793">Waregem Sint-Eloois-Vijve</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="navigate()">Navigeer</button>
+  <ion-list>
+    <ion-item-divider color="light">Kaart:</ion-item-divider>
+    <ion-item>
+      <!-- HELP Tonen van de navigatie (ik krijg een error: Error Launching navigator:cordova_not_available). De cordova plugin is normaal geïnstalleerd-->
+    </ion-item>
+    <ion-item-divider color="light">Club:</ion-item-divider>
+    <ion-item>
+      <!-- HELP Gegevens tonen van het item gekozen uit de combobox -->
+      <ion-label>
+        <!--{{item.club}}-->
+      </ion-label>
+    </ion-item>
+    <ion-item-divider color="light">Adres:</ion-item-divider>
+    <ion-item>
+      <!-- HELP Gegevens tonen van het item gekozen uit de combobox -->
+      <ion-label>
+        <!--{{item.adres}}-->
+      </ion-label>
+    </ion-item>
+    <ion-item-divider color="light">Openingsuren:</ion-item-divider>
+    <ion-item>
+      <!-- HELP Gegevens tonen van het item gekozen uit de combobox -->
+      <ion-label>
+        <!--{{item.openingsuren}}-->
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

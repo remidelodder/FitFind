@@ -1,0 +1,59 @@
+<!--
+  Generated template for the MijnAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Mijn Account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="master">
+  <ion-list>
+    <ion-item-divider color="light">Naam:</ion-item-divider>
+    <ion-item>
+      <!-- Tonen van de gegevens uit de database -->
+      <ion-input type="text" [(ngModel)]="item.naam" placeholder={{item.naam}}></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Voornaam:</ion-item-divider>
+    <ion-item>
+      <!-- Tonen van de gegevens uit de database -->
+      <ion-input type="text" [(ngModel)]="item.voornaam"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Gebruikersnaam:</ion-item-divider>
+    <ion-item>
+      <!-- Tonen van de gegevens uit de database -->
+      <ion-input type="text" [(ngModel)]="item.gebruikersnaam"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Geboortedatum:</ion-item-divider>
+    <ion-item>
+      <!-- Tonen van de gegevens uit de database -->
+      <ion-input type="date" [(ngModel)]="item.geboortedatum"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Geslacht:</ion-item-divider>
+    <ion-item>
+      <ion-label>Geslacht</ion-label>
+      <!-- Tonen van de gegevens uit de database -->
+      <ion-select [(ngModel)]="item.geslacht">
+        <ion-option value="V">Vrouw</ion-option>
+        <ion-option value="M">Man</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item-divider color="light">Gewicht:</ion-item-divider>
+    <ion-item>
+      <!-- Tonen van de gegevens uit de database -->
+      <ion-input type="number" [(ngModel)]="item.gewicht"></ion-input>
+    </ion-item>
+    <ion-item-divider color="light">Lengte:</ion-item-divider>
+    <ion-item>
+      <!-- Tonen van de gegevens uit de database -->
+      <ion-input type="number" [(ngModel)]="item.lengte"></ion-input>
+    </ion-item>
+  </ion-list>
+  <!-- Saven van de nieuwe gegevens -->
+  <button ion-button full (click)="save()" color="dark">Wijzigingen Opslaan</button>
+</ion-content>
