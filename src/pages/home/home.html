@@ -14,7 +14,11 @@
 
 
 <ion-content padding class="master">
-<!-- HELP gebruikersnaam uit database moet hier komen te staan -->  <h1>Welkom {{item.gebruikersnaam}}</h1>
+<!-- HELP gebruikersnaam uit database moet hier komen te staan -->  
+<!-- README: Als je het email adres bedoelt krijg je dit binnen na het aanmelden via firebase. Authservice:29 -->
+<!-- README: Indien je een gekoppelde tabel bedoelt, hebben we dat in de les gezien https://github.com/F-V/C09_Les -->
+
+<h1>Welkom {{item.gebruikersnaam}}</h1>
 <h2>Workouts</h2>
 <!-- HELP Link naar 'WorkoutPage' ook veranderen in tabs --><img src="assets/img/Workout.jpg" alt="Workout" (click)="showWorkout()">
 <h2>Like Basic Fit op Facebook</h2>
