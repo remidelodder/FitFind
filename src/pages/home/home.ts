@@ -17,6 +17,7 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 })
 //HELP gebruikersnaam uit database halen
 //HELP Link naar 'WorkoutPage' ook veranderen in tabs
+//README: zie commentaar in de HTML file
 export class HomePage {
   item:any;
   constructor(
