@@ -16,29 +16,28 @@
   <ion-list>
     <ion-item-divider color="light">Naam:</ion-item-divider>
     <ion-item>
-      <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="text" [(ngModel)]="item.naam" placeholder={{item.naam}}></ion-input>
+      <ion-input type="text" [(ngModel)]="users.naam"></ion-input>
     </ion-item>
     <ion-item-divider color="light">Voornaam:</ion-item-divider>
     <ion-item>
       <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="text" [(ngModel)]="item.voornaam"></ion-input>
+      <ion-input type="text" [(ngModel)]="users.voornaam"></ion-input>
     </ion-item>
     <ion-item-divider color="light">Gebruikersnaam:</ion-item-divider>
     <ion-item>
       <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="text" [(ngModel)]="item.gebruikersnaam"></ion-input>
+      <ion-input type="text" [(ngModel)]="users.gebruikersnaam"></ion-input>
     </ion-item>
     <ion-item-divider color="light">Geboortedatum:</ion-item-divider>
     <ion-item>
       <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="date" [(ngModel)]="item.geboortedatum"></ion-input>
+      <ion-input type="date" [(ngModel)]="users.geboortedatum"></ion-input>
     </ion-item>
     <ion-item-divider color="light">Geslacht:</ion-item-divider>
     <ion-item>
       <ion-label>Geslacht</ion-label>
       <!-- Tonen van de gegevens uit de database -->
-      <ion-select [(ngModel)]="item.geslacht">
+      <ion-select [(ngModel)]="users.geslacht">
         <ion-option value="V">Vrouw</ion-option>
         <ion-option value="M">Man</ion-option>
       </ion-select>
@@ -46,12 +45,12 @@
     <ion-item-divider color="light">Gewicht:</ion-item-divider>
     <ion-item>
       <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="number" [(ngModel)]="item.gewicht"></ion-input>
+      <ion-input type="number" [(ngModel)]="users.gewicht"></ion-input>
     </ion-item>
     <ion-item-divider color="light">Lengte:</ion-item-divider>
     <ion-item>
       <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="number" [(ngModel)]="item.lengte"></ion-input>
+      <ion-input type="number" [(ngModel)]="users.lengte"></ion-input>
     </ion-item>
   </ion-list>
   <!-- Saven van de nieuwe gegevens -->

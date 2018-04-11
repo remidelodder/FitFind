@@ -16,6 +16,7 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
   templateUrl: 'registreren.html',
 })
 //HELP Data moet in database terechtkomen
+// README: Welke data?
 export class RegistrerenPage {
   user = {
     email: "",

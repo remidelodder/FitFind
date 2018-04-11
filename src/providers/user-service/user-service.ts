@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-
 /*
   Generated class for the UserServiceProvider provider.
 
@@ -14,6 +13,7 @@ export class UserServiceProvider {
   constructor(private db: AngularFireDatabase) {
     console.log('Hello UserServiceProvider Provider');
   }
+
   getAll() {
     return this.db.list("users").valueChanges();
   }
@@ -48,7 +48,7 @@ export class UserServiceProvider {
     gewicht: string,
     lengte: string
   ) {
-    this.db.object('user/' + id).update({
+    this.db.object('users/' + id).update({
       id: id,
       naam: naam,
       voornaam: voornaam,

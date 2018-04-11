@@ -7,9 +7,14 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { UserServiceProvider } from '../providers/user-service/user-service';
+import { ClubServiceProvider } from '../providers/club-service/club-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,8 +29,6 @@ import { RegistrerenPage } from '../pages/registreren/registreren';
 import { VoortgangPage } from '../pages/voortgang/voortgang';
 import { WijzigingenOpgeslagenPage } from '../pages/wijzigingen-opgeslagen/wijzigingen-opgeslagen';
 import { WorkoutPage } from '../pages/workout/workout';
-import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-import { UserServiceProvider } from '../providers/user-service/user-service';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { AbWorkoutPage } from '../pages/ab-workout/ab-workout';
 import { KrachtPage } from '../pages/kracht/kracht';
@@ -63,6 +66,7 @@ var config = {
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -93,9 +97,11 @@ var config = {
     StatusBar,
     SplashScreen,
     LaunchNavigator,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
-    UserServiceProvider
+    UserServiceProvider,
+    ClubServiceProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ClubServiceProvider
   ]
 })
 export class AppModule { }

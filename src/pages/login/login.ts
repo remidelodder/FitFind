@@ -22,7 +22,7 @@ export class LoginPage {
     public navParams: NavParams,
     private authService: AuthServiceProvider) {
   }
-  user = {
+  users = {
     email: "remidelodder@hotmail.com",
     password: "remi123"
   }
@@ -30,8 +30,8 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   login() {
-    this.authService.login(this.user.email, this.user.password);
-    this.authService.login(this.user.email, this.user.password)
+    this.authService.login(this.users.email, this.users.password);
+    this.authService.login(this.users.email, this.users.password)
       .then(() => {
         if (this.authService.isLoggedIn) {
           this.navCtrl.setRoot(TabsPage);

@@ -18,25 +18,41 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 //HELP gebruikersnaam uit database halen
 //HELP Link naar 'WorkoutPage' ook veranderen in tabs
 export class HomePage {
-  item:any;
+  users: any;
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    public UserProvider: UserServiceProvider
+    private db: UserServiceProvider
   ) {
-    console.log("Navigated to with params", navParams);
-    if(navParams.data){
-      this.item = navParams.data;
-    }
-    else{
+    console.log("navigate with params", navParams);
+    if (navParams.data) {
+      this.users = navParams.data;
+    } else {
       console.log("Navigated to without params");
     }
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
-  showWorkout(){
+
+  /*save(){
+    this.db.save(
+      this.users.id, 
+      this.users.naam,
+      this.users.voornaam,
+      this.users.geboortedatum,
+      this.users.geslacht,
+      this.users.gewicht,
+      this.users.lengte
+    ).then((Response) => {
+      console.log("Saved users");
+      this.navCtrl.pop();
+    })
+    .cath((error) => {
+      console.log("Couldn't save users, got error", error);
+    })
+  }*/
+  showWorkout() {
     this.navCtrl.push(WorkoutPage);
   }
 }

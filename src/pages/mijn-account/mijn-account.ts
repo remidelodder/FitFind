@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 /**
  * Generated class for the MijnAccountPage page.
@@ -15,13 +16,13 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
   templateUrl: 'mijn-account.html',
 })
 export class MijnAccountPage {
-  item:any;
+  users: any;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private userService:UserServiceProvider) {
     console.log("Navigated to with params", navParams)
-    this.item = navParams.data;
+    this.users = navParams.data;
   }
 
   ionViewDidLoad() {
@@ -29,14 +30,14 @@ export class MijnAccountPage {
   }
   save(){
     this.userService.save(
-      this.item.id,
-      this.item.naam,
-      this.item.voornaam,
-      this.item.gebruikersnaam,
-      this.item.geboortedatum,
-      this.item.geslacht,
-      this.item.gewicht,
-      this.item.lengte
+      this.users.id,
+      this.users.naam,
+      this.users.voornaam,
+      this.users.gebruikersnaam,
+      this.users.geboortedatum,
+      this.users.geslacht,
+      this.users.gewicht,
+      this.users.lengte
     )
     .then((response)=>{
       console.log("Saved item");

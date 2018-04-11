@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Observable } from 'rxjs/Observable';
+import { ClubServiceProvider } from '../../providers/club-service/club-service';
 
 /**
  * Generated class for the ClubfinderPage page.
@@ -17,11 +19,15 @@ import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-na
 export class ClubfinderPage {
   bestemming: string;
   start: string
+
+  clubs: any;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private launchNavigator: LaunchNavigator,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public db: ClubServiceProvider
   ) {
     this.start = "";
   }
@@ -44,7 +50,14 @@ export class ClubfinderPage {
     toast.present();
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ClubfinderPage');
+    this.clubs = this.db.getAll();
+    console.log("db returned", this.clubs);
+
+    /*this.clubs.subscribe((result) => {
+      console.log("got this data from provider", result);
+    }, (error) => {
+      console.log("Didn't get any data", error);
+    })*/
   }
 
 }
