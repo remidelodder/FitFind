@@ -27,9 +27,19 @@ export class ClubfinderPage {
     public navParams: NavParams,
     private launchNavigator: LaunchNavigator,
     private toastCtrl: ToastController,
-    public db: ClubServiceProvider
+    private db: ClubServiceProvider
   ) {
     this.start = "";
+  }
+  ionViewDidLoad() {
+    console.log("ionViewDidLoad ClubfinderPage");
+    this.clubs = this.db.getAll();
+
+    this.clubs.subscribe((result) => {
+      console.log("got this data from provider", result);
+    }, (error) => {
+      console.log("Didn't get any data", error);
+    })
   }
   navigate() {
     let options: LaunchNavigatorOptions = {
@@ -49,15 +59,4 @@ export class ClubfinderPage {
     });
     toast.present();
   }
-  ionViewDidLoad() {
-    this.clubs = this.db.getAll();
-    console.log("db returned", this.clubs);
-
-    /*this.clubs.subscribe((result) => {
-      console.log("got this data from provider", result);
-    }, (error) => {
-      console.log("Didn't get any data", error);
-    })*/
-  }
-
 }

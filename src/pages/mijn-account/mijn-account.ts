@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { RegistrerenPage } from '../registreren/registreren';
+import { DetailPage } from '../detail/detail';
+import { EditPage } from '../edit/edit';
 
 /**
  * Generated class for the MijnAccountPage page.
@@ -16,20 +19,35 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
   templateUrl: 'mijn-account.html',
 })
 export class MijnAccountPage {
-  users: any;
+  users: Array<any>;
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    private userService:UserServiceProvider) {
+    private db: UserServiceProvider) {
     console.log("Navigated to with params", navParams)
     this.users = navParams.data;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MijnAccountPage');
+    this.db.getAll().subscribe((response) => {
+      console.log("Got this data", response);
+      this.users = response;
+    }, (error) => {
+      console.log("Couldn't get data", error);
+    });
   }
-  save(){
-    this.userService.save(
+  itemTapped(event, user){
+    /*this.navCtrl.push(RegistrerenPage, {
+      user: user 
+    });*/
+    console.log("tapped user", user);
+    this.navCtrl.push(DetailPage, user);
+  }
+  edit(user:any){
+    this.navCtrl.push(EditPage, user);
+  }
+  /*save(){
+    this.db.save(
       this.users.id,
       this.users.naam,
       this.users.voornaam,
@@ -48,5 +66,5 @@ export class MijnAccountPage {
       console.log("Couldn't save item, got error",error);
       // TODO: present toast/message to user
     });
-  }
+  }*/
 }

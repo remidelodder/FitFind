@@ -14,10 +14,11 @@
 
 
 <ion-content padding class="master">
-    <h1>Welkom</h1>
-    <div>{{users.gebruikersnaam}}</div>
-<h2>Workouts</h2>
-<img src="assets/img/Workout.jpg" alt="Workout" (click)="showWorkout()">
-<h2>Like Basic Fit op Facebook</h2>
-<a href="https://www.facebook.com/BasicFitBelgie/"><img src="assets/img/Basic fit Logo.png" alt="Basic-Fit Logo"></a>
+  <h1 *ngFor="let user of users | async">Welkom {{user.gebruikersnaam}}</h1>
+  <h2>Workouts</h2>
+  <img src="assets/img/Workout.jpg" alt="Workout" (click)="showWorkout()">
+  <h2>Like Basic Fit op Facebook</h2>
+  <a href="https://www.facebook.com/BasicFitBelgie/">
+    <img src="assets/img/Basic fit Logo.png" alt="Basic-Fit Logo">
+  </a>
 </ion-content>

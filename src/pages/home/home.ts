@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WorkoutPage } from '../workout/workout';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the HomePage page.
@@ -18,21 +19,24 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 //HELP gebruikersnaam uit database halen
 //HELP Link naar 'WorkoutPage' ook veranderen in tabs
 export class HomePage {
-  users: any;
+  users:Observable<any[]>;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private db: UserServiceProvider
   ) {
-    console.log("navigate with params", navParams);
-    if (navParams.data) {
-      this.users = navParams.data;
-    } else {
-      console.log("Navigated to without params");
-    }
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+
+    this.users = this.db.getAll();
+
+    this.users.subscribe((result)=>{
+      console.log("got this data from provider", result);
+    }, (error)=>{
+      console.log("Didn't get any data", error);
+    })
   }
 
   /*save(){

@@ -33,6 +33,8 @@ import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { AbWorkoutPage } from '../pages/ab-workout/ab-workout';
 import { KrachtPage } from '../pages/kracht/kracht';
 import { KrachttrainingSpieropbouwPage } from '../pages/krachttraining-spieropbouw/krachttraining-spieropbouw';
+import { DetailPage } from '../pages/detail/detail';
+import { EditPage } from '../pages/edit/edit';
 
 var config = {
   apiKey: "AIzaSyCeL1sbyeGe8IuPEnfN3L0ZPjsOphPQ9Gw",
@@ -62,7 +64,9 @@ var config = {
     WorkoutPage,
     AbWorkoutPage,
     KrachtPage,
-    KrachttrainingSpieropbouwPage
+    KrachttrainingSpieropbouwPage,
+    DetailPage,
+    EditPage
   ],
   imports: [
     BrowserModule,
@@ -91,7 +95,9 @@ var config = {
     WorkoutPage,
     AbWorkoutPage,
     KrachtPage,
-    KrachttrainingSpieropbouwPage
+    KrachttrainingSpieropbouwPage,
+    DetailPage,
+    EditPage
   ],
   providers: [
     StatusBar,

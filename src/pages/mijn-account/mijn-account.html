@@ -11,48 +11,86 @@
   </ion-navbar>
 
 </ion-header>
-
+<!-- /HELP Ik krijg telkens deze error maar heb geen idee aan wat het ligt:
+  Error: Cannot find a differ supporting object '[object Object]' of type 'object'. NgFor only supports binding to Iterables such as Arrays.
+  Het is de bedoeling dat ik de gegevens die ik in de registratie aanmaak kan weergeven en wijzigen.
+-->
 <ion-content padding class="master">
   <ion-list>
     <ion-item-divider color="light">Naam:</ion-item-divider>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="users.naam"></ion-input>
-    </ion-item>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="itemTapped($event, user)">
+        {{user.naam}}
+        <!-- <ion-input type="text" [(ngModel)]="users.naam"></ion-input> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="edit(item)">Wijzig</button>
+      </ion-item-options>
+    </ion-item-sliding>
     <ion-item-divider color="light">Voornaam:</ion-item-divider>
-    <ion-item>
-      <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="text" [(ngModel)]="users.voornaam"></ion-input>
-    </ion-item>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="itemTapped($event, user)">
+        {{user.voornaam}}
+        <!-- <ion-input type="text" [(ngModel)]="users.voornaam"></ion-input> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="edit(item)">Wijzig</button>
+      </ion-item-options>
+    </ion-item-sliding>
     <ion-item-divider color="light">Gebruikersnaam:</ion-item-divider>
-    <ion-item>
-      <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="text" [(ngModel)]="users.gebruikersnaam"></ion-input>
-    </ion-item>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="itemTapped($event, user)">
+        {{user.gebruikersnaam}}
+        <!-- <ion-input type="text" [(ngModel)]="users.gebruikersnaam"></ion-input> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="edit(item)">Wijzig</button>
+      </ion-item-options>
+    </ion-item-sliding>
     <ion-item-divider color="light">Geboortedatum:</ion-item-divider>
-    <ion-item>
-      <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="date" [(ngModel)]="users.geboortedatum"></ion-input>
-    </ion-item>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="itemTapped($event, user)">
+        {{user.geboortedatum}}
+        <!-- <ion-input type="date" [(ngModel)]="users.geboortedatum"></ion-input> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="edit(item)">Wijzig</button>
+      </ion-item-options>
+    </ion-item-sliding>
     <ion-item-divider color="light">Geslacht:</ion-item-divider>
-    <ion-item>
-      <ion-label>Geslacht</ion-label>
-      <!-- Tonen van de gegevens uit de database -->
-      <ion-select [(ngModel)]="users.geslacht">
-        <ion-option value="V">Vrouw</ion-option>
-        <ion-option value="M">Man</ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="itemTapped($event, user)">
+        {{user.geslacht}}
+        <ion-label>Geslacht</ion-label>
+        <!-- <ion-select [(ngModel)]="users.geslacht">
+      <ion-option value="V">Vrouw</ion-option>
+      <ion-option value="M">Man</ion-option>
+      </ion-select> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="edit(item)">Wijzig</button>
+      </ion-item-options>
+    </ion-item-sliding>
     <ion-item-divider color="light">Gewicht:</ion-item-divider>
-    <ion-item>
-      <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="number" [(ngModel)]="users.gewicht"></ion-input>
-    </ion-item>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="itemTapped($event, user)">
+        {{user.gewicht}}
+        <!-- <ion-input type="number" [(ngModel)]="users.gewicht"></ion-input> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="edit(item)">Wijzig</button>
+      </ion-item-options>
+    </ion-item-sliding>
     <ion-item-divider color="light">Lengte:</ion-item-divider>
-    <ion-item>
-      <!-- Tonen van de gegevens uit de database -->
-      <ion-input type="number" [(ngModel)]="users.lengte"></ion-input>
-    </ion-item>
+    <ion-item-sliding *ngFor="let user of users">
+      <ion-item (click)="itemTapped($event, user)">
+        {{user.lengte}}
+        <!-- <ion-input type="number" [(ngModel)]="users.lengte"></ion-input> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="edit(item)">Wijzig</button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
-  <!-- Saven van de nieuwe gegevens -->
   <button ion-button full (click)="save()" color="dark">Wijzigingen Opslaan</button>
 </ion-content>

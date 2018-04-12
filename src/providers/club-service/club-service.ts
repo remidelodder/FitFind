@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -11,7 +10,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 @Injectable()
 export class ClubServiceProvider {
 
-  selectedCategorie = "bredene";
+  /*selectedCategorie = "bredene";
 
   clubs = {
     bredene: [
@@ -261,11 +260,14 @@ export class ClubServiceProvider {
         ]
       }
     ],
-  }
-  constructor() {
+  }*/
+  constructor(private db: AngularFireDatabase) {
     console.log('Hello ClubServiceProvider Provider');
   }
   getAll() {
+    return this.db.list("clubs").valueChanges();
+  }
+  /*getAll() {
     switch (this.selectedCategorie) {
       case "bredene": {
         return this.clubs.bredene;
@@ -307,5 +309,5 @@ export class ClubServiceProvider {
         return this.clubs.waregem;
       }
     }
-  }
+  }*/
 }

@@ -15,9 +15,9 @@
   <ion-list>
     <ion-item>
       <ion-label>Bestemming</ion-label>
-      <!-- HELP Combobux aanvullen -->
+      <!-- /HELP Combobux aanvullen en gegevens van het geselecteerde tonen. De gegevens komen uit de database (Firebase) -->
       <ion-select [(ngModel)]="selectedCategorie" placeholder="Kies">
-        <ion-option *ngFor="let club of clubs" value="{{club.naam}}">{{club.lijstnaam}}</ion-option>
+        <ion-option *ngFor="let club of clubs | async" value="{{club.naam}}">{{club.lijstnaam}}</ion-option>
         <!-- <ion-option value="Kapelstraat 151, 8450">Bredene</ion-option>
         <ion-option value="Maalsesteenweg 50, 8310">Brugge A</ion-option>
         <ion-option value="Frank Van Ackerpromenade 4, 8000">Brugge B</ion-option>
@@ -39,19 +39,19 @@
   <ion-list>
     <!-- HELP Gegevens van het geselecteerde item in de combobox weergeven  -->
     <ion-item-divider color="light">Club:</ion-item-divider>
-    <ion-item *ngFor="let club of clubs">
+    <ion-item *ngFor="let club of clubs | async">
       <ion-label>
         {{club.club}}
       </ion-label>
     </ion-item>
     <ion-item-divider color="light">Adres:</ion-item-divider>
-    <ion-item *ngFor="let club of clubs">
+    <ion-item *ngFor="let club of clubs | async">
       <ion-label>
         {{club.adres}}
       </ion-label>
     </ion-item>
     <ion-item-divider color="light">Openingsuren:</ion-item-divider>
-    <ion-item *ngFor="let club of clubs">
+    <ion-item *ngFor="let club of clubs | async">
       <ion-label>
         {{club.openingsuren.ma}}
         {{club.openingsuren.di}}
