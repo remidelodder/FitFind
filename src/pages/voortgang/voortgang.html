@@ -23,12 +23,12 @@ Geen idee hoe ik dit in code moet zetten -->
     <ion-list>
       <ion-item>
         <ion-label>Datum:</ion-label>
-        <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+        <ion-datetime displayFormat="MM" name="myDate"[(ngModel)]="myDate"></ion-datetime>
       </ion-item>
       <ion-item>
         <ion-label>Gewicht (Kg):</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input [(ngModel)]="gewicht" name="gewicht" type="number"></ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button full color="dark">Toevoegen</button>
+    <button ion-button full color="dark" (click)="dataToevoegen()">Toevoegen</button>
 </ion-content>

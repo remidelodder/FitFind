@@ -20,7 +20,8 @@ export class ClubfinderPage {
   bestemming: string;
   start: string
 
-  clubs: any;
+  selectedItem: any;
+  clubs: Array<any>;
 
   constructor(
     public navCtrl: NavController,
@@ -30,16 +31,34 @@ export class ClubfinderPage {
     private db: ClubServiceProvider
   ) {
     this.start = "";
+    this.selectedItem = navParams.get('club');
   }
   ionViewDidLoad() {
     console.log("ionViewDidLoad ClubfinderPage");
-    this.clubs = this.db.getAll();
+    this.db.getAll().subscribe((response)=>{
+      console.log("Got this data", response);
+      this.clubs = response;
+    }, (error)=>{
+      console.log("Couldn't get data", error);
+    });
+    //this.clubs = this.db.getAll();
 
-    this.clubs.subscribe((result) => {
+    /*getItems(ev){
+      console.log("filtering data", ev);
+      let val = ev.target.value;
+      if(!val || !val.trim()){
+        console.log("no adres filter");
+        return;
+      }
+      this.clubs = this.db.query({
+        adres: val
+      });
+    }*/
+    /*this.clubs.subscribe((result) => {
       console.log("got this data from provider", result);
     }, (error) => {
       console.log("Didn't get any data", error);
-    })
+    })*/
   }
   navigate() {
     let options: LaunchNavigatorOptions = {

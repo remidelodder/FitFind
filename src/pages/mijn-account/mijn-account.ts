@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { RegistrerenPage } from '../registreren/registreren';
 import { DetailPage } from '../detail/detail';
 import { EditPage } from '../edit/edit';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the MijnAccountPage page.
@@ -23,7 +24,8 @@ export class MijnAccountPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private db: UserServiceProvider) {
+    private db: UserServiceProvider
+  ) {
     console.log("Navigated to with params", navParams)
     this.users = navParams.data;
   }

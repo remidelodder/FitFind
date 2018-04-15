@@ -4,7 +4,6 @@ import { HomePage } from '../home/home';
 import { WorkoutPage } from '../workout/workout';
 import { VoortgangPage } from '../voortgang/voortgang';
 import { ClubfinderPage } from '../clubfinder/clubfinder';
-import { PlanPage } from '../plan/plan';
 import { InstellingenPage } from '../instellingen/instellingen';
 import { MijnAccountPage } from '../mijn-account/mijn-account';
 
@@ -17,9 +16,8 @@ export class TabsPage {
   tab2Root = WorkoutPage;
   tab3Root = VoortgangPage;
   tab4Root = ClubfinderPage;
-  tab5Root = PlanPage;
-  tab6Root = InstellingenPage;
-  tab7Root = MijnAccountPage;
+  tab5Root = InstellingenPage;
+  tab6Root = MijnAccountPage;
 
   constructor() {
 

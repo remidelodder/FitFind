@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="dark">
-    <ion-title>Ab_Workout</ion-title>
+    <ion-title>Ab Workout</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -23,5 +23,54 @@
         Level: 1
       </ion-note>
     </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item-divider>Omschrijving:</ion-item-divider>
+    <ion-item>
+      <p>
+        Oefeningen voor een sterke sixpack.
+        <br/> In elke oefening doe je gedurende 1 minuut
+        <br/> zoveel mogelijk herhalingen. Wanneer de
+        <br/> oefening gedaan is ga je zo snel als mogelijk
+        <br/> naar de volgende oefening.
+      </p>
+    </ion-item>
+    <ion-item-divider>Doel:</ion-item-divider>
+    <ion-item>
+      <p>
+        Training Power & Kracht
+      </p>
+    </ion-item>
+    <ion-item-divider>Materaal:</ion-item-divider>
+    <ion-item>
+      <p>
+        Geen materiaal vereist
+      </p>
+    </ion-item>
+  </ion-list>
+  <h2>Kies je workout</h2>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/Crunch in balans.jpg">
+      </ion-thumbnail>
+      <h2>Crunch in balans gestrekte benen</h2>
+      <button ion-button clear item-end (click)="ToonCrunchInBalans()">Tonen</button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/Star sit ups.jpg">
+      </ion-thumbnail>
+      <h2>Star sit ups</h2>
+      <button ion-button clear item-end (click)="ToonStarSitUps()">Tonen</button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/Plank reps.jpg">
+      </ion-thumbnail>
+      <h2>Plank reps</h2>
+      <button ion-button clear item-end (click)="ToonPlankReps()">Tonen</button>
+    </ion-item>
+
   </ion-list>
 </ion-content>

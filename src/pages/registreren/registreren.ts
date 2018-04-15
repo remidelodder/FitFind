@@ -18,7 +18,7 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 //HELP Data moet in database terechtkomen
 // README: Welke data?
 export class RegistrerenPage {
-  user = {
+  users = {
     email: "",
     password: "",
     password2: ""
@@ -36,8 +36,8 @@ export class RegistrerenPage {
     console.log('ionViewDidLoad RegistrerenPage');
   }
   register() {
-    if (this.user.password === this.user.password2) {
-      this.AuthService.register(this.user.email, this.user.password)
+    if (this.users.password === this.users.password2) {
+      this.AuthService.register(this.users.email, this.users.password)
         .then(() => {
           if (this.AuthService.isRegisterSuccess) {
             this.AuthService.isRegisterSuccess = false;

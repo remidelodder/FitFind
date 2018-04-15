@@ -16,6 +16,10 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { ClubServiceProvider } from '../providers/club-service/club-service';
 
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { Vibration } from '@ionic-native/vibration';
+import { LocalNotifications } from '@ionic-native/local-notifications'
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ActiviteitPage } from '../pages/activiteit/activiteit';
@@ -29,12 +33,20 @@ import { RegistrerenPage } from '../pages/registreren/registreren';
 import { VoortgangPage } from '../pages/voortgang/voortgang';
 import { WijzigingenOpgeslagenPage } from '../pages/wijzigingen-opgeslagen/wijzigingen-opgeslagen';
 import { WorkoutPage } from '../pages/workout/workout';
-import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { AbWorkoutPage } from '../pages/ab-workout/ab-workout';
 import { KrachtPage } from '../pages/kracht/kracht';
 import { KrachttrainingSpieropbouwPage } from '../pages/krachttraining-spieropbouw/krachttraining-spieropbouw';
 import { DetailPage } from '../pages/detail/detail';
 import { EditPage } from '../pages/edit/edit';
+import { CrunchBalansPage } from '../pages/crunch-balans/crunch-balans';
+import { StarSitUpsPage } from '../pages/star-sit-ups/star-sit-ups';
+import { PlankRepsPage } from '../pages/plank-reps/plank-reps';
+import { CrossTrainerPage } from '../pages/cross-trainer/cross-trainer';
+import { SeatedLegPressPage } from '../pages/seated-leg-press/seated-leg-press';
+import { LatPulldownPage } from '../pages/lat-pulldown/lat-pulldown';
+import { CardioVrijPage } from '../pages/cardio-vrij/cardio-vrij';
+import { SquatBarbellPage } from '../pages/squat-barbell/squat-barbell';
+import { BenchPressDbPage } from '../pages/bench-press-db/bench-press-db';
 
 var config = {
   apiKey: "AIzaSyCeL1sbyeGe8IuPEnfN3L0ZPjsOphPQ9Gw",
@@ -66,7 +78,16 @@ var config = {
     KrachtPage,
     KrachttrainingSpieropbouwPage,
     DetailPage,
-    EditPage
+    EditPage,
+    CrunchBalansPage,
+    StarSitUpsPage,
+    PlankRepsPage,
+    CrossTrainerPage,
+    SeatedLegPressPage,
+    LatPulldownPage,
+    CardioVrijPage,
+    SquatBarbellPage,
+    BenchPressDbPage
   ],
   imports: [
     BrowserModule,
@@ -97,7 +118,16 @@ var config = {
     KrachtPage,
     KrachttrainingSpieropbouwPage,
     DetailPage,
-    EditPage
+    EditPage,
+    CrunchBalansPage,
+    StarSitUpsPage,
+    PlankRepsPage,
+    CrossTrainerPage,
+    SeatedLegPressPage,
+    LatPulldownPage,
+    CardioVrijPage,
+    SquatBarbellPage,
+    BenchPressDbPage
   ],
   providers: [
     StatusBar,
@@ -106,8 +136,9 @@ var config = {
     AuthServiceProvider,
     UserServiceProvider,
     ClubServiceProvider,
+    Vibration,
+    LocalNotifications,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ClubServiceProvider
   ]
 })
 export class AppModule { }

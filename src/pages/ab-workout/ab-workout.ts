@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CrunchBalansPage } from '../crunch-balans/crunch-balans';
+import { StarSitUpsPage } from '../star-sit-ups/star-sit-ups';
+import { PlankRepsPage } from '../plank-reps/plank-reps';
 
 /**
  * Generated class for the AbWorkoutPage page.
@@ -21,5 +24,13 @@ export class AbWorkoutPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AbWorkoutPage');
   }
-
+  ToonCrunchInBalans() {
+    this.navCtrl.push(CrunchBalansPage);
+  }
+  ToonStarSitUps() {
+    this.navCtrl.push(StarSitUpsPage);
+  }
+  ToonPlankReps() {
+    this.navCtrl.push(PlankRepsPage);
+  }
 }

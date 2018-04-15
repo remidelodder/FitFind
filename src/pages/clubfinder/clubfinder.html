@@ -15,51 +15,30 @@
   <ion-list>
     <ion-item>
       <ion-label>Bestemming</ion-label>
-      <!-- /HELP Combobux aanvullen en gegevens van het geselecteerde tonen. De gegevens komen uit de database (Firebase) -->
-      <ion-select [(ngModel)]="selectedCategorie" placeholder="Kies">
-        <ion-option *ngFor="let club of clubs | async" value="{{club.naam}}">{{club.lijstnaam}}</ion-option>
-        <!-- <ion-option value="Kapelstraat 151, 8450">Bredene</ion-option>
-        <ion-option value="Maalsesteenweg 50, 8310">Brugge A</ion-option>
-        <ion-option value="Frank Van Ackerpromenade 4, 8000">Brugge B</ion-option>
-        <ion-option value="Patersstraat 5, 8900">Ieper</ion-option>
-        <ion-option value="Duinenwater 28, 8300">Knokke-Heist</ion-option>
-        <ion-option value="Engelsewandeling 2J, 8500">Kortrijk A</ion-option>
-        <ion-option value="Meensestraat 9, 8500">Kortrijk B</ion-option>
-        <ion-option value="Kortrijkstraat 398, 8930">Menen</ion-option>
-        <ion-option value="Northlaan 13, 8400">Oostende A</ion-option>
-        <ion-option value="Torhoutsesteenweg 611, 8400">Oostende B</ion-option>
-        <ion-option value="Brugsesteenweg 363, 8800">Roeselare A</ion-option>
-        <ion-option value="Ooststraat 34, 8800">Roeselare B</ion-option>
-        <ion-option value="Gentseweg 611, 8793">Waregem Sint-Eloois-Vijve</ion-option>
-      -->
+      <ion-select placeholder="Kies">
+        <ion-option  *ngFor="let club of clubs" value="{{club.adres}}">{{club.lijstnaam}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
-  <button ion-button full (click)="navigate()">Navigeer</button>
+  <button ion-button full color="dark"(click)="navigate()">Navigeer</button>
   <ion-list>
-    <!-- HELP Gegevens van het geselecteerde item in de combobox weergeven  -->
     <ion-item-divider color="light">Club:</ion-item-divider>
-    <ion-item *ngFor="let club of clubs | async">
+    <ion-item *ngFor="let club of clubs">
       <ion-label>
-        {{club.club}}
+          {{club.club}}
       </ion-label>
     </ion-item>
     <ion-item-divider color="light">Adres:</ion-item-divider>
-    <ion-item *ngFor="let club of clubs | async">
+    <ion-item *ngFor="let club of clubs">
       <ion-label>
         {{club.adres}}
       </ion-label>
     </ion-item>
     <ion-item-divider color="light">Openingsuren:</ion-item-divider>
-    <ion-item *ngFor="let club of clubs | async">
+    <ion-item *ngFor="let club of clubs">
       <ion-label>
-        {{club.openingsuren.ma}}
-        {{club.openingsuren.di}}
-        {{club.openingsuren.wo}}
-        {{club.openingsuren.do}}
-        {{club.openingsuren.vr}}
-        {{club.openingsuren.za}}
-        {{club.openingsuren.zo}}
+        {{club.openingsuren.ma}} {{club.openingsuren.di}} {{club.openingsuren.wo}} {{club.openingsuren.do}} {{club.openingsuren.vr}}
+        {{club.openingsuren.za}} {{club.openingsuren.zo}}
       </ion-label>
     </ion-item>
   </ion-list>

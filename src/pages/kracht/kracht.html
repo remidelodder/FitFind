@@ -1,18 +1,74 @@
 <!--
-  Generated template for the KrachtPage page.
+  Generated template for the AbWorkoutPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="dark">
     <ion-title>Kracht</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="master">
+  <ion-list>
+    <img src="assets/img/Dumbbells.jpg">
+    <ion-item>
+      <ion-icon name="clock" item-start></ion-icon>
+      35 min.
+      <ion-note item-end>
+        Level: 1
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item-divider>Omschrijving:</ion-item-divider>
+    <ion-item>
+      <p>
+        Oefeningen voor je sterker te maken.
+        <br/>Je doet dit 1x per week.
+      </p>
+    </ion-item>
+    <ion-item-divider>Doel:</ion-item-divider>
+    <ion-item>
+      <p>
+        Training Power & Kracht
+      </p>
+    </ion-item>
+    <ion-item-divider>Materaal:</ion-item-divider>
+    <ion-item>
+      <p>
+        Dumbbells, krachtapparatuur, pulley
+      </p>
+    </ion-item>
+  </ion-list>
+  <h2>Kies je workout</h2>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/Cross Trainer.jpg">
+      </ion-thumbnail>
+      <h2>Cross-trainer</h2>
+      <h3>Lichte inspanning</h3>
+      <button ion-button clear item-end (click)="ToonCrossTrainer()">Tonen</button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/Leg Press.jpg">
+      </ion-thumbnail>
+      <h2>Seated leg press</h2>
+      <button ion-button clear item-end (click)="ToonSeatedLegPress()">Tonen</button>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/img/Lat pulldown.jpg">
+      </ion-thumbnail>
+      <h2>Lat pulldown</h2>
+      <button ion-button clear item-end (click)="ToonLatPullDown()">Tonen</button>
+    </ion-item>
 
+  </ion-list>
 </ion-content>

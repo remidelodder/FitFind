@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CrossTrainerPage } from '../cross-trainer/cross-trainer';
+import { SeatedLegPressPage } from '../seated-leg-press/seated-leg-press';
+import { LatPulldownPage } from '../lat-pulldown/lat-pulldown';
 
 /**
  * Generated class for the KrachtPage page.
@@ -21,5 +24,13 @@ export class KrachtPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad KrachtPage');
   }
-
+  ToonCrossTrainer() {
+    this.navCtrl.push(CrossTrainerPage);
+  }
+  ToonSeatedLegPress() {
+    this.navCtrl.push(SeatedLegPressPage);
+  }
+  ToonLatPullDown() {
+    this.navCtrl.push(LatPulldownPage);
+  }
 }

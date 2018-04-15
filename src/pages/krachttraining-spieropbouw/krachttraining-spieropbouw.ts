@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CardioVrijPage } from '../cardio-vrij/cardio-vrij';
+import { SquatBarbellPage } from '../squat-barbell/squat-barbell';
+import { BenchPressDbPage } from '../bench-press-db/bench-press-db';
 
 /**
  * Generated class for the KrachttrainingSpieropbouwPage page.
@@ -21,5 +24,13 @@ export class KrachttrainingSpieropbouwPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad KrachttrainingSpieropbouwPage');
   }
-
+  ToonCardioVrij() {
+    this.navCtrl.push(CardioVrijPage);
+  }
+  ToonSquat() {
+    this.navCtrl.push(SquatBarbellPage);
+  }
+  ToonBenchPress() {
+    this.navCtrl.push(BenchPressDbPage);
+  }
 }
